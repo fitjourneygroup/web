@@ -1,0 +1,23 @@
+[
+  {
+    "file": "/fitness/cviky_na_doma_s_vlastni_vahou.html",
+    "category": "fitness",
+    "title": "Cviky na doma s vlastní vahou pro začátečníky",
+    "desc": "Tipy pro začátečníky",
+    "img": "/img/nahled_cviky_na_doma_s_vlastni_vahou.jpg"
+  },
+  {
+    "file": "/fitness/jak_zacit_behat.html",
+    "category": "fitness",
+    "title": "Jak začít běhat pro začátečníky",
+    "desc": "Praktický průvodce běháním: tipy, plán a prevence zranění pro začátečníky",
+    "img": "/img/nahled_jak_zacit_behat.jpg"
+  },
+  {
+  "file": "/zdrava_strava/pitny_rezim_a_hydratace.html",
+  "category": "zdrava_strava",
+  "title": "Pitný režim a hydratace",
+  "desc": "Jak správně pít a zůstat zdravý - doporučené množství tekutin, co pít a tipy na pravidelnou hydrataci",
+  "img": "/img/nahled_pitny_rezim_a_hydratace.jpg"
+  }
+]

@@ -1,0 +1,455 @@
+        /* =========================
+        ZÁKLADNÍ STYLY PRO WEB
+        ========================= */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* =========================
+        HLAVIČKA A NAVIGACE
+        ========================= */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(2px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: transform 0.7s ease;
+        }
+
+        header .logo img {
+            height: 50px;
+            margin-left: 20px;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        nav.navigace {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            font-size: 20px;
+            padding-right: 100px;
+            z-index: 1010;
+        }
+
+        nav.navigace a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav.navigace a:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hamburger ikona */
+        .hamburger {
+            position: relative;
+            z-index: 1100; /* nad navigací */
+            width: 30px;
+            height: 24px; /* výška kontejneru */
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 30px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.4s ease;
+            transform-origin: center center;
+        }
+
+        /* Aktivní stav hamburgeru - změna na křížek */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg);
+            position: absolute;
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg);
+            position: absolute;
+        }
+
+        /* Aktivní odkaz v navigaci */
+        .navigace a.active {
+            color: #4CAF50;
+            font-weight: bold;
+            border-bottom: 2px solid #4CAF50;
+        }
+
+        /* =========================
+        HERO BANNER
+        ========================= */
+        .hero {
+            position: relative;
+            background-image: url('/img/banner_index.jpg');
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.35);
+            z-index: 1;
+        }
+
+        .hero h1, .hero p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        /* =========================
+        SEARCH
+        ========================= */
+        .search-wrap {
+            max-width: 1200px;
+            margin: 20px auto 0;
+            padding: 0 20px;
+            position: relative; /* pro absolutní křížek a box s návrhy */
+        }
+
+        .search {
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            max-width: 520px;
+            gap: 8px;
+            position: relative; /* aby křížek a návrhy byly uvnitř */
+        }
+
+        #searchInput {
+            flex: 1;
+            padding: 10px 40px 10px 12px; /* prostor pro křížek */
+            border-radius: 12px;
+            border: 1px solid #d0d7de;
+            font-size: 16px;
+            outline: none;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s, border-color 0.3s;
+        }
+
+        #searchInput:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+
+        #clearSearch {
+            position: absolute;
+            top: 50%;
+            right: 12px; /* uvnitř inputu */
+            transform: translateY(-50%);
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.8;
+            transition: background 0.3s, opacity 0.3s;
+            z-index: 10; /* nad návrhy */
+        }
+
+        #clearSearch:hover {
+            background: #43a047;
+            opacity: 1;
+        }
+
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+
+
+        /* Skrýtí nativního křížku u input type="search" */
+
+        /* Chrome, Edge, Opera */
+        input[type="search"]::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        /* Firefox */
+        input[type="search"]::-moz-search-clear {
+            display: none;
+        }
+
+        /* Internet Explorer */
+        input[type="search"]::-ms-clear {
+            display: none;
+        }
+
+        /* =========================
+        NAŠEPTÁVÁNÍ – MALÝ BOX POD SEARCH
+        ========================= */
+        .suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%; /* stejná šířka jako input */
+            max-width: 520px;
+            margin-top: 4px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transform: translateY(-10px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            z-index: 5; /* pod křížkem */
+        }
+
+        .suggestions.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .suggestions div {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .suggestions div:hover {
+            background-color: #f0f0f0;
+        }
+
+
+        /* =========================
+        GRID ČLÁNKŮ
+        ========================= */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+        }
+
+        .article-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-content h2 {
+            color: #2c3e50;
+            margin: 0 0 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .articles-section {
+            background: linear-gradient(
+                to bottom,
+                rgba(10, 15, 25, 0.95) 0%,
+                rgba(25, 35, 50, 0.9) 20%,
+                #f0f0f0 55%,
+                #e0e0e0 75%,
+                #2a2a2a 100%
+            );
+            padding: 60px 0;
+        }
+
+        /* =========================
+        TLAČÍTKA
+        ========================= */
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #43a047;
+        }
+
+        /* =========================
+        FOOTER
+        ========================= */
+        footer {
+            background: #2c2c2c;
+            color: white;
+            text-align: center; 
+            padding: 5px;
+        }
+
+        /* =========================
+        RESPONZIVNÍ DESIGN
+        ========================= */
+        @media (max-width: 768px) {
+            nav.navigace {
+                position: absolute;
+                top: 60px;
+                right: 80px;
+                box-sizing: border-box;
+                background: rgba(0,0,0,0.9);
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 20px;
+                border-radius: 8px;
+                opacity: 0;
+                transform: translateX(20px);
+                pointer-events: none;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+
+            nav.navigace a {
+                color: white;
+            }
+
+            nav.navigace.active {
+                opacity: 1;
+                transform: translateX(0);
+                pointer-events: auto;
+            }
+
+            .hamburger {
+                display: flex;
+                position: absolute;
+                padding-right: 100px;
+                z-index: 1100;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 30px;
+                height: 24px;
+                cursor: pointer;
+                right: 0;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+                margin: 20px auto;
+                gap: 20px;
+            }
+
+            .hero {
+                padding: 60px 20px;
+                background-position: top center;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+        }
+
+        /*COOKIES A PRIVACY POLICY*/
+        .privacy-policy {
+            max-width: 800px;
+            margin: 100px auto 40px; /* odsazení od hlavičky */
+            padding: 0 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            padding: 30px;
+        }
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #222;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        #cookie-banner button {
+            background: #f4f4f4;
+            color: #222;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        #cookie-banner button {
+            padding: 5px 12px;
+            margin-left: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        #accept-cookies {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #decline-cookies {
+            background-color: #f44336;
+            color: white;
+        }

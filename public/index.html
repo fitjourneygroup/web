@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Meta informace pro SEO -->
+        <title>Zdravý životní styl | Blog o fitness, výživě a cestování</title>
+        <meta name="description" content="Objevte tipy, recepty a inspirace pro zdravý životní styl, fitness a cestování. Praktické rady pro každý den.">
+        <meta name="keywords" content="zdravý životní styl, fitness, výživa, recepty, cvičení, wellness, zdraví, cestování, motivace">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+        <!-- Favicony -->
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.png" type="image/png">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="icon" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" sizes="512x512" href="/android-chrome-512x512.png">
+        <meta name="msapplication-TileImage" content="/mstile-150x150.png">
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Zdravý životní styl | Blog o fitness, výživě a cestování">
+        <meta property="og:description" content="Objevte tipy, recepty a inspirace pro zdravý životní styl, fitness a cestování. Praktické rady pro každý den.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.fitjourney.cz">
+        <meta property="og:image" content="https://www.fitjourney.cz/public/web/slide4.jpg">
+        <meta property="og:locale" content="cs_CZ">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Zdravý životní styl | Blog o fitness, výživě a cestování">
+        <meta name="twitter:description" content="Objevte tipy, recepty a inspirace pro zdravý životní styl, fitness a cestování. Praktické rady pro každý den.">
+        <meta name="twitter:image" content="https://www.fitjourney.cz/public/web/slide4.jpg">
+
+        <!-- JSON-LD Schema pro blog -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "FitJourney",
+            "url": "https://www.fitjourney.cz",
+            "description": "Blog o zdravé výživě, fitness a cestování. Tipy a inspirace pro zdravý život každý den.",
+            "publisher": {
+                "@type": "Organization",
+                "name": "FitJourney",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.fitjourney.cz/images/logo.png"
+                }
+            }
+        }
+        </script>
+        <link rel="stylesheet" href="css/index.css">
+        <title>FitJourney</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="#all" data-cat="all"><img src="img/logo.png" alt="Logo"></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="navigace">
+                <a href="#fitness" data-cat="fitness">FITNESS</a>
+                <a href="#zdrava_strava" data-cat="zdrava_strava">NUTRIČNÍ TIPY</a>
+                <a href="#cestovani" data-cat="cestovani">CESTOVÁNÍ</a>
+            </nav>
+        </header>
+
+          <!-- HERO BANNER -->
+        <section class="hero">
+            <h1>Blog o zdravém životním stylu a cestování</h1>
+            <p>Fitness · Zdravá výživa · Cestování</p>
+        </section>
+
+        <section class="articles-section">
+
+            <!-- SEARCH -->
+            <section class="search-wrap">
+            <div class="search">
+                <input id="searchInput" type="search" placeholder="Hledat články…" aria-label="Hledat články" />
+                <button id="clearSearch" type="button" aria-label="Vymazat hledání">✕</button>
+            </div>
+            <!-- našeptávání -->
+            <div class="suggestions" hidden></div>
+
+            <p id="noResults" hidden>Nic jsme nenašli. Zkuste jiný dotaz nebo změnit kategorii.</p>
+            </section>
+        <main class="container" id="articlesContainer">
+            <!-- Články se načítají sem pomocí JavaScriptu a JSON-->
+        </main>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2025 FitJourney | Kontakt: <a href="mailto:fitjourney.group@gmail.com">fitjourney.group@gmail.com</a> | 
+            <a href="/privacy-policy.html">Privacy Policy / Zásady ochrany osobních údajů</a></p>
+        </footer>
+
+        <script src="/logika/script.js"></script>
+        <script src="/logika/cookies.js"></script>
+    </body>
+</html>

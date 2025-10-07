@@ -1,0 +1,392 @@
+        /* =========================
+        ZÁKLADNÍ STYLY PRO WEB
+        ========================= */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* =========================
+        HLAVIČKA A NAVIGACE
+        ========================= */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(2px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: transform 0.7s ease;
+        }
+
+        header .logo img {
+            height: 50px;
+            margin-left: 20px;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        nav.navigace {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            font-size: 20px;
+            padding-right: 100px;
+            z-index: 1010;
+        }
+
+        nav.navigace a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav.navigace a:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hamburger ikona */
+        .hamburger {
+            position: relative;
+            z-index: 1100; /* nad navigací */
+            width: 30px;
+            height: 24px; /* výška kontejneru */
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 30px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.4s ease;
+            transform-origin: center center;
+        }
+
+        /* Aktivní stav hamburgeru - změna na křížek */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg);
+            position: absolute;
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg);
+            position: absolute;
+        }
+
+        /* Aktivní odkaz v navigaci */
+        .navigace a.active {
+            color: #4CAF50;
+            font-weight: bold;
+            border-bottom: 2px solid #4CAF50;
+        }
+
+        /* =========================
+        HLAVNÍ OBSAH ČLÁNKU
+        ========================= */
+        .container {
+            max-width: 900px; /* širší pro čtení */
+            margin: 100px auto 40px;
+            padding: 0 20px;
+        }
+
+        .clanek {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            line-height: 1.8;
+            font-size: 1.15em;
+        }
+
+        .clanek h1 {
+            margin-top: 0;
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .clanek h2 {
+            font-size: 2em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .clanek .meta {
+            font-size: 0.9em;
+            color: gray;
+            margin-bottom: 25px;
+        }
+
+        .clanek p {
+            margin-bottom: 20px;
+        }
+
+        .clanek img {
+            max-width: 600px;
+            max-height: 400px;
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin: 25px auto;
+        }
+
+        .clanek figure {
+            text-align: center;
+            margin: 25px auto;
+        }
+
+        .clanek figcaption {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .clanek ul, .clanek ol {
+            margin: 15px 0 20px 40px;
+        }
+
+        .clanek ul li, .clanek ol li {
+            margin-bottom: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+        table th {
+            background-color: #f2f2f2;
+        }
+
+        /*ODKAZ NA DALŠÍ ČLÁNKY*/
+        .related-articles {
+            margin-top: 40px;
+            padding: 25px 30px;
+            background-color: #fdfdfd;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .related-articles:hover {
+            transform: translateY(-3px);
+        }
+
+        .related-articles h2 {
+            margin-top: 0;
+            color: #1d3557;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 35px;
+        }
+
+        .related-articles ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* maximálně 3 vedle sebe */
+            gap: 20px; /* mezera mezi články */
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .related-articles li {
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .related-articles li:hover {
+            transform: translateY(-3px);
+        }
+
+        .related-articles a {
+            text-decoration: none;
+            color: #1d3557;
+            font-weight: 600;
+        }
+
+        /* Varianty podle kategorie článku */
+        body[data-category="cestovani"] .related-articles h2 {
+            color: #1d3557;
+        }
+
+        body[data-category="fitness"] .related-articles h2 {
+            color: #1b5e20;
+        }
+
+        body[data-category="zdrava_strava"] .related-articles h2 {
+            color: #ff6f00;
+        }
+
+        /* =========================
+        FOOTER
+        ========================= */
+        footer {
+            background: #2c2c2c;
+            color: white;
+            text-align: center; 
+            padding: 10px;
+        }
+
+        /* =========================
+        RESPONZIVNÍ DESIGN
+        ========================= */
+        @media (max-width: 768px) {
+            nav.navigace {
+                position: absolute;
+                top: 60px;
+                right: 80px;
+                background: rgba(0,0,0,0.9);
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 20px;
+                border-radius: 8px;
+                opacity: 0;
+                transform: translateX(20px);
+                pointer-events: none;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+
+            nav.navigace a {
+                color: white;
+            }
+
+            nav.navigace.active {
+                opacity: 1;
+                transform: translateX(0);
+                pointer-events: auto;
+            }
+
+            .hamburger {
+                display: flex;
+                position: absolute;
+                padding-right: 100px;
+                z-index: 1100;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 30px;
+                height: 24px;
+                cursor: pointer;
+                right: 0;
+            }
+
+            .container {
+                margin: 20px auto;
+                padding: 0 15px;
+            }
+
+            .clanek {
+                font-size: 1em;
+                padding: 20px;
+            }
+
+            .clanek h1 {
+                font-size: 2em;
+            }
+
+            .clanek h2 {
+                font-size: 1.5em;
+            }
+            .clanek img {
+                max-width: 400px;     /* menší než celá šířka textu */
+                max-height: 200px;  /* nižší obrázky na mobilech */
+            }
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .related-articles ul {
+                grid-template-columns: 1fr; /* jen jeden sloupec */
+            }
+        }
+        
+        /*COOKIES A PRIVACY POLICY*/
+        .privacy-policy {
+            max-width: 800px;
+            margin: 100px auto 40px; /* odsazení od hlavičky */
+            padding: 0 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            padding: 30px;
+        }
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #222;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        #cookie-banner button {
+            background: #f4f4f4;
+            color: #222;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        #cookie-banner button {
+            padding: 5px 12px;
+            margin-left: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        #accept-cookies {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #decline-cookies {
+            background-color: #f44336;
+            color: white;
+        }
+
+        /* REKLAMNÍ PROSTOR */
+        .ad-placeholder {
+            width: 100%;
+            max-width: 728px; /* typická bannerová velikost */
+            margin: 20px auto;
+            text-align: center;
+        }
