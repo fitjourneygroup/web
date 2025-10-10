@@ -228,21 +228,34 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Načtení kategorie z URL
-    const hash = window.location.hash.replace("#","");
+    // Funkce pro nastavení hero banneru
+    function setHero(category) {
+        if (heroContent[category]) {
+            heroTitle.textContent = heroContent[category].title;
+            heroDesc.textContent = heroContent[category].desc;
+            hero.style.backgroundImage = `url('${heroContent[category].image}')`;
+        }
+    }
+    
+    // Načtení kategorie z URL nebo nastavení pro index.html
+    const hash = window.location.hash.replace("#", "");
     if (hash && heroContent[hash]) {
         activeCategory = hash;
-        heroTitle.textContent = heroContent[activeCategory].title;
-        heroDesc.textContent  = heroContent[activeCategory].desc;
-        hero.style.backgroundImage = `url('${heroContent[activeCategory].image}')`;
-
-        menuLinks.forEach(l => {
-            if (l.dataset.cat === activeCategory) l.classList.add("active");
-            else l.classList.remove("active");
-        });
-
-        updateSEO(activeCategory); // ← volání SEO
+    } else if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+        activeCategory = "all";
     }
+    
+    setHero(activeCategory);
+    
+    // Nastavení aktivního menu podle activeCategory
+    menuLinks.forEach(l => {
+        if (l.dataset.cat === activeCategory) l.classList.add("active");
+        else l.classList.remove("active");
+    });
+    
+    // Volání SEO
+    updateSEO(activeCategory);
+
 
     // Vyhledávání
     let t;
@@ -327,3 +340,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 });
+
