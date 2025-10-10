@@ -43,10 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Hero banner obsah
     const heroContent = {
-        all: { title: "Blog o zdravém životním stylu a cestování", desc: "Fitness · Zdravá výživa · Cestování", image: "img/banner_index.jpg" },
-        fitness: { title: "Fitness tipy a tréninkové plány", desc: "Začni cvičit a udržuj kondici každý den", image: "/img/banner_fitness.jpg" },
-        zdrava_strava: { title: "Nutriční tipy a zdravé recepty", desc: "Objevuj jednoduché a chutné recepty", image: "/img/banner_strava.jpg" },
-        cestovani: { title: "Cestovatelské inspirace", desc: "Nejlepší destinace a tipy na cestování", image: "/img/banner_cestovani.jpg" }
+        all: { title: "Blog o zdravém životním stylu a cestování", desc: "Fitness · Zdravá výživa · Cestování", image: "img/hero_index.jpg" },
+        fitness: { title: "Fitness tipy a tréninkové plány", desc: "Začni cvičit a udržuj kondici každý den", image: "/img/hero_fitness.jpg" },
+        zdrava_strava: { title: "Nutriční tipy a zdravé recepty", desc: "Objevuj jednoduché a chutné recepty", image: "/img/hero_strava.jpg" },
+        cestovani: { title: "Cestovatelské inspirace", desc: "Nejlepší destinace a tipy na cestování", image: "/img/hero_cestovani.jpg" }
     };
 
     const norm = s => (s || "").toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -327,3 +327,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 });
+
