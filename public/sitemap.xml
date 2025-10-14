@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Index -->
+  <url>
+    <loc>https://fitjourney.cz/</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Fitness -->
+  <url>
+    <loc>https://fitjourney.cz/fitness/cviky_na_doma_s_vlastni_vahou.html</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://fitjourney.cz/fitness/jak_zacit_behat.html</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Zdravá strava -->
+  <url>
+    <loc>https://fitjourney.cz/zdrava_strava/pitny_rezim_a_hydratace.html</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Pravidla ochrany osobních údajů -->
+  <url>
+    <loc>https://fitjourney.cz/privacy-policy.html</loc>
+    <lastmod>2025-10-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+</urlset>
